@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dotGIFT</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script>
+      window.onload = function() {
+        const url = new URL(window.location.href);
+        const params = url.searchParams;
+        const sessionId = params.get("session_id");
+        const iframe = document.getElementById("iframe");
+        iframe.setAttribute('src', `https://script.google.com/macros/s/AKfycbxTijubxxhVZ4VPD-qU9FbsyqqYLCidoGY-ycCHth_CER20guyWXRkyW2I9aJTywvRcMA/exec?session_id=${sessionId}`);
+      }
+    </script>
   </head>
   <body>
     <div class="container">
       <iframe
-        src="https://script.google.com/macros/s/AKfycbxTijubxxhVZ4VPD-qU9FbsyqqYLCidoGY-ycCHth_CER20guyWXRkyW2I9aJTywvRcMA/exec"
+        id="iframe"
+        src=""
       ></iframe>
     </div>
   </body>
